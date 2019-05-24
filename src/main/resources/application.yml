@@ -1,0 +1,19 @@
+spring:
+  redis:
+    # 哨兵模式根据名称自动选择master
+    sentinel:
+      master: mymaster
+      nodes: 192.168.3.10:26379, 192.168.3.11:26379, 192.168.3.12:26379
+    password: xiekong
+    #连接超时时间(毫秒)
+    timeout: 10000
+    lettuce:
+      pool:
+        #最大连接数(默认8)
+        max-active: 20
+        #最大阻塞等待时间(负数表示没限制，默认-1)
+        max-wait: -1
+        #最大空闲(默认8)
+        max-idle: 8
+        #最小空闲(默认0)
+        min-idle: 0
